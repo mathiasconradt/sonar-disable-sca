@@ -1,6 +1,8 @@
-# disable_sca.py
+# sonar_disable_sca.py
 
 Disable SonarQube Cloud SCA by default for multiple organizations listed in a CSV file.
+
+This script is meant for SonarQube Cloud only. It is not for SonarQube Server.
 
 ## Requirements
 
@@ -37,27 +39,27 @@ PowerShell:
 
 ```powershell
 $env:SONAR_TOKEN = "your-token"
-python .\disable_sca.py
+python .\sonar_disable_sca.py
 ```
 
 Windows CMD:
 
 ```cmd
 set SONAR_TOKEN=your-token
-python disable_sca.py
+python sonar_disable_sca.py
 ```
 
 macOS/Linux:
 
 ```sh
 export SONAR_TOKEN="your-token"
-python3 ./disable_sca.py
+python3 ./sonar_disable_sca.py
 ```
 
 Dry run:
 
 ```sh
-python3 ./disable_sca.py --dry-run
+python3 ./sonar_disable_sca.py --dry-run
 ```
 
 ## Prompts

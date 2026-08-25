@@ -2,6 +2,8 @@
 r"""
 Disable SonarQube Cloud SCA by default for organizations listed in orgs.csv.
 
+This script is for SonarQube Cloud only, not SonarQube Server.
+
 Input:
     orgs.csv in the current working directory, one organization key per row, no header.
 
