@@ -4,6 +4,8 @@ Disable SonarQube Cloud SCA by default for multiple organizations listed in a CS
 
 This script is meant for SonarQube Cloud only. It is not for SonarQube Server.
 
+![sonar_disable_sca usage screenshot](screenshot.png)
+
 ## Requirements
 
 - Python 3
