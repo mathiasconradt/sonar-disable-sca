@@ -1,3 +1,10 @@
+# Custom
+opencode_session_id
+claude_session_id
+codex_session_id
+.DS_Store
+*orgs.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
