@@ -46,6 +46,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass
+from pathlib import Path
 
 
 V1_BASE_URL = "https://sonarcloud.io/api"
@@ -112,8 +113,9 @@ def parse_args() -> argparse.Namespace:
 
 
 def read_org_keys(path: str, *, from_flag: bool = False) -> list[str]:
+    resolved_path = Path(path).expanduser().resolve()
     try:
-        with open(path, newline="", encoding="utf-8-sig") as csv_file:
+        with open(resolved_path, newline="", encoding="utf-8-sig") as csv_file:
             reader = csv.reader(csv_file)
             ordered_unique: list[str] = []
             seen: set[str] = set()
@@ -366,7 +368,8 @@ def get_org_keys_from_enterprise(enterprise_key: str, token: str) -> list[str]:
 
 
 def dump_org_keys_csv(org_keys: list[str], path: str) -> None:
-    with open(path, "w", newline="", encoding="utf-8") as csv_file:
+    resolved_path = Path(path).expanduser().resolve()
+    with open(resolved_path, "w", newline="", encoding="utf-8") as csv_file:
         writer = csv.writer(csv_file)
         for org_key in org_keys:
             writer.writerow([org_key])
